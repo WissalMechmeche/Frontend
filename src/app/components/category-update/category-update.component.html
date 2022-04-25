@@ -1,11 +1,10 @@
-
 <div class="content-wrapper">
-    <!--START CONTENT HEADER -->
+    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1> Edit Category</h1>
+            <h1>Edit Category</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -16,26 +15,58 @@
         </div>
       </div>
     </section>
-    <!--END CONTENT HEADER -->
+    <!-- /.container-fluid -->
     <section class="content">
       <div class="container-fluid">
-    <form>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Name</label>
-            <input type="text" [(ngModel)]="currentCategory.name" name="nameCategory" class="form-control">
+        <div class="row mt-4">
+          <div class="col-md-2"></div>  
+          <div class="col-md-4">
+            <div class="card card-success align-content-center">
+              <div class="card-header">
+                <h3 class="card-title">
+                  Edit <small>Category</small>
+                </h3>
+              </div>
+  
+              <form>
+                <div  class="card-body">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Category Name ... " 
+                      [(ngModel)]="currentCategory.name"
+                      name="nameCategory"/>
+                  </div>
+                
+                  <div  class="form-group">
+                    <label >Description</label>
+                    <textarea
+                  
+                        class="form-control"
+                        placeholder="Enter Category Description ... "
+                        [(ngModel)]="currentCategory.description"
+                        name="description"
+                      ></textarea>
+                     
+                  </div>
+
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success" (click)="updateCategory()" >
+                    Edit Category
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Description</label>
-            <textarea name="description"  [(ngModel)]="currentCategory.description"  class="form-control"></textarea>
-        </div>
-        
-        <div class="mt-2">
-            <button type="submit" (click)="updateCategory()"  class="btn btn-success">Edit Category</button>
-        </div>
-    </form>
       </div>
     </section>
   </div>
- 
+  
+
   
   
