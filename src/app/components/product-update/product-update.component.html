@@ -1,11 +1,10 @@
-
-<div class="content-wrapper">
-    <!--START CONTENT HEADER -->
+ <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1> Edit Product</h1>
+            <h1>Edit Product</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -16,44 +15,92 @@
         </div>
       </div>
     </section>
-    <!--END CONTENT HEADER -->
+    <!-- /.container-fluid -->
     <section class="content">
       <div class="container-fluid">
-    <form>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Name</label>
-            <input type="text" [(ngModel)]="currentProduct.name" name="nameProduct" class="form-control">
+        <div class="row mt-4">
+          <div class="col-md-2"></div>  
+          <div class="col-md-4">
+            <div class="card card-success align-content-center">
+              <div class="card-header">
+                <h3 class="card-title">
+                  Edit <small>Product</small>
+                </h3>
+              </div>
+  
+              <form >
+                <div  class="card-body">
+                  <div class="form-group">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Enter Product Name ... "
+                      [(ngModel)]="currentProduct.name" 
+                      name="nameProduct" />
+                  </div>
+                
+                  <div  class="form-group">
+                    <label >Description</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Product Description ... "
+                        [(ngModel)]="currentProduct.description"
+                         name="ProductDescription"
+                      />
+                  </div>
+                  <div  class="form-group">
+                    <label >Price</label>
+                    <input
+                        type="number"
+                        class="form-control"
+                        placeholder="Enter Product Price ... "
+                        [(ngModel)]="currentProduct.unitPrice" 
+                        name="price"
+                    />
+                  </div>
+                  <div  class="form-group">
+                    <label >In Stock</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Quantity In Stock ..."
+                        [(ngModel)]="currentProduct.unitStock"
+                         name="stock"
+                    />
+                    </div>
+                    <div class="form-group">
+                      <label>Category</label>
+                      <br>
+                      <select class="form-control">
+                        <option *ngFor="let cat of categories" value="{{ cat.id}}">{{ cat.name }}</option>
+                      </select>
+                    </div>
+                    <div  class="form-group">
+                      <label >Image</label>
+                      <input
+                          class="form-control"
+                          type="image" 
+                          src="currentProduct.image" 
+                          name="image"
+                      />
+                      </div>
+
+                  </div>
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success"  (click)="updateProduct()">
+                      Edit Product
+                    </button>
+                  </div>
+                
+              </form>
+            </div>
+          </div>
+          
         </div>
-        <div class="col-sm-4 col-md-4 col-lg-4">
-            <label>Description</label>
-            <textarea [(ngModel)]="currentProduct.description" name="nameProduct" class="form-control"></textarea>
-        </div>
-        
-        <div class="col-sm-2 col-md-2 col-lg-2">
-            <label>Price</label>
-            <input type="number" [(ngModel)]="currentProduct.unitPrice" name="price" class="form-control">
-        </div>
-        <div class="col-sm-2 col-md-2 col-lg-2">
-            <label>In Stock</label>
-            <input type="number" [(ngModel)]="currentProduct.unitStock" name="stock" class="form-control">
-        </div>
-        <div class="col-sm-2 col-md-2 col-lg-2">
-            <label>Category</label>
-        <br>
-            <select class="form-control">
-              <option *ngFor="let cat of categories" value="{{ cat.id}}">{{ cat.name }}</option>
-            </select>
-        </div>
-        <div class="col-sm-2 col-md-2 col-lg-2">
-          <label>Image</label>
-          <input type="image" src="currentProduct.image" name="image" class="form-control">
-      </div>
-      
-        <div class="mt-2">
-            <button type="submit" (click)="updateProduct()" class="btn btn-success">Edit Product</button>
-        </div>
-    </form>
       </div>
     </section>
   </div>
+  
   
